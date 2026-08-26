@@ -29,3 +29,6 @@ Repository ini merupakan bagian dari praktikum mata kuliah Pemrograman Web Modul
 
 ## URL Lokal
 `http://localhost/pemweb-obe/`
+
+## Pengembangan
+Praktikum ini digunakan untuk mempelajari dasar-dasar pemrograman web.
