@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praktikum Pemrograman Web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SIPERATA - Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online">
+    <title>SIPERATA - Layanan Surat Pengantar RT</title>
 </head>
 <body>
-    <h1>Praktikum Pemrograman Web</h1>
+
+    <!-- Header & Navigasi Utama -->
+    <header>
+        <a href="#main">Lewati ke konten utama</a>
+        <h1>SIPERATA</h1>
+        <p>Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online</p>
+        
+        <nav aria-label="Navigasi Utama">
+            <a href="#beranda">Beranda</a> |
+            <a href="#layanan">Layanan Surat</a> |
+            <a href="#tracking">Tracking Status</a> |
+            <a href="#kontak">Kontak RT</a>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main id="main">
+
+        <!-- Section 1: Beranda -->
+        <section id="beranda">
+            <h2>Selamat Datang di Portal Pelayanan Warga RT</h2>
+            <p>Pengurusan surat pengantar RT kini lebih cepat, transparan, dan dapat diakses dari mana saja tanpa perlu mengantre di rumah Pengurus RT.</p>
+            <!-- Gambar Informatif -->
+            <img src="https://via.placeholder.com/600x200?text=Alur+Pengajuan+Surat+RT" alt="Diagram alur pengajuan surat pengantar RT dari upload berkas hingga siap diambil">
+            <!-- Gambar Dekoratif -->
+            <img src="https://via.placeholder.com/100x100?text=Icon" alt="">
+        </section>
+
+        <!-- Section 2: Layanan Jenis Surat -->
+        <section id="layanan">
+            <h2>Jenis Surat Pengantar yang Tersedia</h2>
+            
+            <article>
+                <h3>Surat Keterangan Gaji</h3>
+                <p>Surat keterangan penghasilan atau gaji warga dari RT untuk berbagai keperluan administratif (seperti perbankan atau KPR).</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan SKCK</h3>
+                <p>Surat pengantar sebagai syarat penerbitan Surat Keterangan Catatan Kepolisian dari kepolisian lokal.</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan Tidak Mampu (SKTM)</h3>
+                <p>Surat pengantar bantuan sosial atau keringanan biaya pendidikan dari pihak RT.</p>
+            </article>
+        </section>
+
+        <!-- Section 3: Form Kontak -->
+        <section id="kontak">
+            <h2>Hubungi Sekretariat RT</h2>
+            <p>Punya pertanyaan atau kendala dalam pengajuan surat? Kirim pesan ke pengurus RT melalui form berikut.</p>
+            
+            <form action="#" method="post">
+                <div>
+                    <label for="nama_warga">Nama Lengkap Warga:</label><br>
+                    <input type="text" id="nama_warga" name="nama_warga" required placeholder="Masukkan nama Anda">
+                </div>
+                <br>
+                <div>
+                    <label for="no_rumah">Nomor Rumah (Blok/No):</label><br>
+                    <input type="text" id="no_rumah" name="no_rumah" required placeholder="Contoh: Blok A No. 12">
+                </div>
+                <br>
+                <div>
+                    <label for="pesan">Pesan / Kendala:</label><br>
+                    <textarea id="pesan" name="pesan" rows="4" required placeholder="Tuliskan pesan Anda..."></textarea>
+                </div>
+                <br>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SIPERATA - Sistem Informasi Pelayanan RT Online.</p>
+    </footer>
+
 </body>
 </html>
