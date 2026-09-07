@@ -1,83 +1,200 @@
-<!-- Aplikasi SIPERATA - RT Online -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SIPERATA - Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online">
-    <title>SIPERATA - Layanan Surat Pengantar RT</title>
+    <title>SIPERATA - Pelayanan RT Online</title>
 </head>
 <body>
 
+    <!-- Skip Link Aksesibilitas -->
+    <a href="#main-content">Lewati ke konten utama</a>
+
     <!-- Header & Navigasi Utama -->
     <header>
-        <a href="#main">Lewati ke konten utama</a>
         <h1>SIPERATA</h1>
         <p>Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online</p>
         
-        <nav aria-label="Navigasi Utama">
-            <a href="#beranda">Beranda</a> |
-            <a href="#layanan">Layanan Surat</a> |
-            <a href="#tracking">Tracking Status</a> |
-            <a href="#kontak">Kontak RT</a>
+        <nav aria-label="Navigasi Utama Aplikasi">
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#kependudukan">Kependudukan</a></li>
+                <li><a href="#pertanahan">Pertanahan & PBB</a></li>
+                <li><a href="#ekonomi">Ekonomi & Sosial</a></li>
+                <li><a href="#khusus">Keterangan Khusus</a></li>
+                <li><a href="#pengajuan">Form Pengajuan</a></li>
+            </ul>
         </nav>
     </header>
 
     <!-- Konten Utama -->
-    <main id="main">
+    <main id="main-content">
 
         <!-- Section 1: Beranda -->
         <section id="beranda">
-            <h2>Selamat Datang di Portal Pelayanan Warga RT</h2>
-            <p>Pengurusan surat pengantar RT kini lebih cepat, transparan, dan dapat diakses dari mana saja tanpa perlu mengantre di rumah Pengurus RT.</p>
-            <!-- Gambar Informatif -->
-            <img src="https://via.placeholder.com/600x200?text=Alur+Pengajuan+Surat+RT" alt="Diagram alur pengajuan surat pengantar RT dari upload berkas hingga siap diambil">
-            <!-- Gambar Dekoratif -->
-            <img src="https://via.placeholder.com/100x100?text=Icon" alt="">
+            <h2>Selamat Datang di Portal Layanan RT Online</h2>
+            <p>Pengurusan surat pengantar kependudukan, perizinan, dan bantuan sosial kini lebih mudah dan transparan.</p>
+            <figure>
+                <img src="alur-pelayanan.png" alt="Diagram alur pengajuan surat online dari pengisian form hingga verifikasi RT">
+                <figcaption>Alur Pelayanan Surat Pengantar RT Online</figcaption>
+            </figure>
         </section>
 
-        <!-- Section 2: Layanan Jenis Surat -->
-        <section id="layanan">
-            <h2>Jenis Surat Pengantar yang Tersedia</h2>
-            
+        <!-- Section 2: Kependudukan & Catatan Sipil -->
+        <section id="kependudukan">
+            <h2>1. Kependudukan & Catatan Sipil</h2>
+            <p>Surat untuk urusan administrasi data warga.</p>
+
             <article>
-                <h3>Surat Keterangan Gaji</h3>
-                <p>Surat keterangan penghasilan atau gaji warga dari RT untuk berbagai keperluan administratif (seperti perbankan atau KPR).</p>
+                <h3>Pengantar KK Baru / Perubahan Data KK</h3>
+                <p>Untuk warga yang baru menikah, pisah KK, atau tambah anggota keluarga.</p>
             </article>
 
             <article>
-                <h3>Surat Keterangan SKCK</h3>
-                <p>Surat pengantar sebagai syarat penerbitan Surat Keterangan Catatan Kepolisian dari kepolisian lokal.</p>
+                <h3>Pengantar Pindah / Datang Domisili</h3>
+                <p>Untuk mengurus Surat Keterangan Pindah (SKP) atau laporan warga baru.</p>
             </article>
+
+            <article>
+                <h3>Pengantar Akta Kelahiran & Kematian</h3>
+                <p>Dokumen awal sebelum mengurus akta resmi di Disdukcapil.</p>
+            </article>
+        </section>
+
+        <!-- Section 3: Pertanahan, Pajak & Tempat Tinggal -->
+        <section id="pertanahan">
+            <h2>2. Pertanahan, Pajak & Tempat Tinggal</h2>
+            <p>Pelayanan dokumen pertanahan, perumahan, dan PBB.</p>
+
+            <article>
+                <h3>Surat Keterangan Keringanan / Pembebasan PBB</h3>
+                <p>Untuk pensiunan, veteran, atau warga kurang mampu yang ingin mengajukan diskon PBB ke daerah.</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan Belum Memiliki SPPT PBB</h3>
+                <p>Sering dicari mahasiswa/pelajar untuk syarat beasiswa/KIP-K (membuktikan alasan tidak melampirkan bukti PBB).</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan Belum Memiliki Rumah</h3>
+                <p>Biasanya untuk syarat pengajuan KPR Subsidi atau bantuan perumahan.</p>
+            </article>
+        </section>
+
+        <!-- Section 4: Ekonomi & Sosial -->
+        <section id="ekonomi">
+            <h2>3. Ekonomi & Sosial</h2>
+            <p>Surat untuk bantuan atau legalitas usaha mikro.</p>
 
             <article>
                 <h3>Surat Keterangan Tidak Mampu (SKTM)</h3>
-                <p>Surat pengantar bantuan sosial atau keringanan biaya pendidikan dari pihak RT.</p>
+                <p>Untuk keperluan Beasiswa/KIP-K, keringanan biaya Rumah Sakit, atau BPJS PBI.</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan Usaha (SKU) Mikro</h3>
+                <p>Untuk legalitas awal UMKM tingkat RT/RW atau syarat pengajuan KUR ke bank.</p>
             </article>
         </section>
 
-        <!-- Section 3: Form Kontak -->
-        <section id="kontak">
-            <h2>Hubungi Sekretariat RT</h2>
-            <p>Punya pertanyaan atau kendala dalam pengajuan surat? Kirim pesan ke pengurus RT melalui form berikut.</p>
+        <!-- Section 5: Keterangan Khusus & Legalitas -->
+        <section id="khusus">
+            <h2>4. Keterangan Khusus & Legalitas</h2>
+            <p>Surat untuk keperluan administrasi formal.</p>
+
+            <article>
+                <h3>Pengantar Nikah (Formulir N1–N4)</h3>
+                <p>Persyaratan awal sebelum mendaftar nikah ke KUA/Catatan Sipil.</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan Ahli Waris (SKAW)</h3>
+                <p>Pengantar awal pengurusan penetapan waris di kelurahan.</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan Beda Nama / Data</h3>
+                <p>Untuk mengklarifikasi perbedaan ejaan nama di KTP, Ijazah, atau Akta.</p>
+            </article>
+
+            <article>
+                <h3>Surat Keterangan Domisili Usaha / Organisasi</h3>
+                <p>Menyatakan suatu kegiatan/lembaga berlokasi di wilayah RT tersebut.</p>
+            </article>
+
+            <article>
+                <h3>Surat Izin Keramaian / Acara</h3>
+                <p>Pengantar izin jika warga mengadakan hajatan yang menggunakan jalan umum.</p>
+            </article>
+        </section>
+
+        <!-- Section 6: Form Pengajuan Surat -->
+        <section id="pengajuan">
+            <h2>Form Pengajuan Surat Mandiri</h2>
             
             <form action="#" method="post">
-                <div>
-                    <label for="nama_warga">Nama Lengkap Warga:</label><br>
-                    <input type="text" id="nama_warga" name="nama_warga" required placeholder="Masukkan nama Anda">
-                </div>
-                <br>
-                <div>
-                    <label for="no_rumah">Nomor Rumah (Blok/No):</label><br>
-                    <input type="text" id="no_rumah" name="no_rumah" required placeholder="Contoh: Blok A No. 12">
-                </div>
-                <br>
-                <div>
-                    <label for="pesan">Pesan / Kendala:</label><br>
-                    <textarea id="pesan" name="pesan" rows="4" required placeholder="Tuliskan pesan Anda..."></textarea>
-                </div>
-                <br>
-                <button type="submit">Kirim Pesan</button>
+                <fieldset>
+                    <legend>Data Diri Pemohon</legend>
+                    
+                    <p>
+                        <label for="nama">Nama Lengkap (Sesuai KTP):</label><br>
+                        <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required>
+                    </p>
+
+                    <p>
+                        <label for="nik">Nomor Induk Kependudukan (NIK):</label><br>
+                        <input type="number" id="nik" name="nik" placeholder="16 digit NIK" required>
+                    </p>
+
+                    <p>
+                        <label for="no_hp">Nomor WhatsApp Active:</label><br>
+                        <input type="tel" id="no_hp" name="no_hp" placeholder="Contoh: 081234567890" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pilihan Layanan Surat</legend>
+
+                    <p>
+                        <label for="kategori_surat">Pilih Jenis Surat Pengantar:</label><br>
+                        <select id="kategori_surat" name="kategori_surat" required>
+                            <option value="">-- Pilih Jenis Surat --</option>
+                            <optgroup label="Kependudukan & Catatan Sipil">
+                                <option value="kk_baru">Pengantar KK Baru / Perubahan Data KK</option>
+                                <option value="pindah_domisili">Pengantar Pindah / Datang Domisili</option>
+                                <option value="akta">Pengantar Akta Kelahiran & Kematian</option>
+                            </optgroup>
+                            <optgroup label="Pertanahan, Pajak & Tempat Tinggal">
+                                <option value="keringanan_pbb">Surat Keterangan Keringanan / Pembebasan PBB</option>
+                                <option value="belum_sppt_pbb">Surat Keterangan Belum Memiliki SPPT PBB</option>
+                                <option value="belum_rumah">Surat Keterangan Belum Memiliki Rumah</option>
+                            </optgroup>
+                            <optgroup label="Ekonomi & Sosial">
+                                <option value="sktm">Surat Keterangan Tidak Mampu (SKTM)</option>
+                                <option value="sku">Surat Keterangan Usaha (SKU) Mikro</option>
+                            </optgroup>
+                            <optgroup label="Keterangan Khusus & Legalitas">
+                                <option value="nikah">Pengantar Nikah (Formulir N1–N4)</option>
+                                <option value="waris">Surat Keterangan Ahli Waris (SKAW)</option>
+                                <option value="beda_nama">Surat Keterangan Beda Nama / Data</option>
+                                <option value="domisili_usaha">Surat Keterangan Domisili Usaha / Organisasi</option>
+                                <option value="izin_keramaian">Surat Izin Keramaian / Acara</option>
+                            </optgroup>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="keperluan">Alasan / Catatan Keperluan:</label><br>
+                        <textarea id="keperluan" name="keperluan" rows="4" placeholder="Tuliskan alasan pengajuan surat secara singkat..." required></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Kirim Pengajuan Surat</button>
+                    <button type="reset">Batal</button>
+                </p>
             </form>
         </section>
 
@@ -85,7 +202,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 SIPERATA - Sistem Informasi Pelayanan RT Online.</p>
+        <p>&copy; 2026 SIPERATA - Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online.</p>
+        <p><a href="#main-content">Kembali ke atas</a></p>
     </footer>
 
 </body>
