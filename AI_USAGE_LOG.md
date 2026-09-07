@@ -1,7 +1,16 @@
-# AI Usage Log
-| Tanggal | Tool AI | Tujuan/Prompt Ringkas | Hasil yang Dipakai | Verifikasi/Perubahan Mahasiswa |
-| :--- | :--- | :--- | :--- | :--- |
-| **02/09/2026** | Gemini | Membuat struktur HTML5 semantik untuk SIPERATA sesuai modul praktikum | Kode HTML5 `index.html` lengkap dengan tag semantik, form, dan alt text | Memeriksa kecocokan tag semantik `<article>`, `<section>`, serta menguji navigasi tombol Tab pada browser. |
-| **02/09/2026** | Gemini | Membantu troubleshooting error 404 Not Found di Laragon | Solusi pengecekan nama direktori dan nama file index.html | Memastikan struktur folder di `C:\laragon\www\pemweb-obe` dan me-restart Apache. |
-| **02/09/2026** | Gemini | Mengatasi kendala commit Git yang gagal karena tidak ada perubahan file | Panduan menambahkan file `style.css` dan membuat perubahan komentar HTML | Menjalankan perintah Git secara bertahap hingga mendapatkan 3 commit bermakna. |
-| **02/09/2026** | Gemini | Menyusun panduan pengerjaan dan alur dokumentasi untuk laporan | Urutan instruksi pengerjaan dari setup branch sampai dokumentasi | Mengikuti alur pengerjaan dan melakukan screenshot terminal serta kode program. |
+# AI Usage Log - Modul 02 (Pemrograman Web)
+**Nama Aplikasi:** SIPERATA  
+**Mata Kuliah:** Pemrograman Web (Teknik Komputer UBT)
+---
+### Catatan Penggunaan Generative AI
+| No | Tanggal | Tools AI | Prompts / Instruksi Penggunaan | Hasil & Modifikasi Mandiri |
+| :---: | :---: | :---: | :--- | :--- |
+| **1** | 07/09/2026 | Gemini | Meminta struktur dasar `index.html` semantik dengan elemen `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<form>`, dan `<footer>`[cite: 1]. | Menyesuaikan isi konten agar berfokus pada proyek pelayanan RT online (SIPERATA)[cite: 1]. |
+| **2** | 07/09/2026 | Gemini | Meminta integrasi 13+ kategori surat pengantar spesifik (Kependudukan, PBB, SKTM, SKU, Legalitas) ke dalam bentuk `<article>` dan pilihan `<select>`. | Merapikan pilihan form menggunakan `<optgroup>` dan memastikan keterhubungan `<label>` via atribut `for` dan `id`[cite: 1]. |
+| **3** | 07/09/2026 | Gemini | Meminta panduan penerapan fitur aksesibilitas dasar (skip link, heading hierarchy, dan `alt text` gambar)[cite: 1]. | Memeriksa ketersediaan atribut `lang="id"` dan menguji keterjangkauan tombol **Tab** navigasi keyboard[cite: 1]. |
+| **4** | 07/09/2026 | Gemini | Meminta panduan alur Git branching (`feature/struktur-home`), commit history, dan penggabungan (*merge*) ke branch `main`[cite: 1]. | Mengeksekusi perintah Git di terminal VS Code dan memverifikasi status *clean commit*[cite: 1]. |
+---
+### Ringkasan Verifikasi Mandiri
+* **Uji Struktur:** Kode divalidasi agar tidak dominan menggunakan `div` melainkan tag semantik baku HTML5[cite: 1].
+* **Uji Aksesibilitas:** Dipastikan seluruh kolom input form memiliki label terhubung dan gambar memiliki `alt text`[cite: 1].
+* **Uji Server Lokal:** Aplikasi dipastikan berjalan sempurna melalui `http://localhost/pemweb-obe/` pada server Laragon 5[cite: 1].
