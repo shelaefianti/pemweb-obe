@@ -1,38 +1,86 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SIPERATA - Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online">
-    <title>SIPERATA - Pelayanan RT Online</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SIPERATA - Sistem Informasi Pelayanan & Tracking Surat Pengantar RT 06 Juata Permai Online">
+    <title>SIPERATA - Sistem Informasi Pelayanan & Tracking Surat Pengantar RT 06 Juata Permai Online</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Skip Link Aksesibilitas -->
-    <a href="#main-content">Lewati ke konten utama</a>
-
-    <!-- Header & Navigasi Utama -->
     <header>
-        <h1>SIPERATA</h1>
-        <p>Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online</p>
-        
-        <nav aria-label="Navigasi Utama Aplikasi">
-            <ul>
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#kependudukan">Kependudukan</a></li>
-                <li><a href="#pertanahan">Pertanahan & PBB</a></li>
-                <li><a href="#ekonomi">Ekonomi & Sosial</a></li>
-                <li><a href="#khusus">Keterangan Khusus</a></li>
-                <li><a href="#pengajuan">Form Pengajuan</a></li>
-            </ul>
-        </nav>
+        <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+        <div class="header-container">
+            <div class="header-brand">
+                <!-- SVG Logo Presisi -->
+                <svg class="brand-logo" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-label="Logo SIPERATA">
+                    <!-- Atap & Cerobong Asap -->
+                    <path d="M 275,70 L 460,230 L 415,230 L 415,110 L 365,110 L 365,148 L 275,70 Z" fill="#0056B3"/>
+                    <path d="M 275,70 L 90,230 L 140,230 L 275,110 L 410,230 L 460,230 Z" fill="#0056B3"/>
+                    
+                    <!-- Jendela Atap -->
+                    <rect x="252" y="137" width="18" height="18" rx="2" fill="#0056B3"/>
+                    <rect x="278" y="137" width="18" height="18" rx="2" fill="#0056B3"/>
+                    <rect x="252" y="163" width="18" height="18" rx="2" fill="#0056B3"/>
+                    <rect x="278" y="163" width="18" height="18" rx="2" fill="#0056B3"/>
+
+                    <!-- Lingkaran Melingkar Bawah (Swoosh Ring) -->
+                    <path d="M 40,360 C 20,270 90,250 90,250 C 90,250 40,310 100,390 C 160,460 380,440 450,380 C 500,330 450,285 450,285 C 450,285 500,320 440,395 C 370,475 120,470 40,360 Z" fill="#007BFF"/>
+
+                    <!-- Dokumen Utama -->
+                    <rect x="100" y="180" width="270" height="210" rx="15" fill="#0056B3"/>
+                    <path d="M 115,195 H 305 L 355,245 V 375 H 115 Z" fill="#FFFFFF"/>
+                    <path d="M 305,195 V 245 H 355 Z" fill="#0056B3"/>
+
+                    <!-- Ikon 3 Orang Kependudukan -->
+                    <circle cx="215" cy="235" r="16" fill="#0056B3"/>
+                    <path d="M 190,278 C 190,255 200,255 215,255 C 230,255 240,255 240,278 Z" fill="#0056B3"/>
+                    <circle cx="180" cy="245" r="12" fill="#0056B3"/>
+                    <path d="M 163,278 C 163,260 170,260 180,260 C 190,260 197,260 197,278 Z" fill="#0056B3"/>
+                    <circle cx="250" cy="245" r="12" fill="#0056B3"/>
+                    <path d="M 233,278 C 233,260 240,260 250,260 C 260,260 267,260 267,278 Z" fill="#0056B3"/>
+
+                    <!-- Garis Teks Dokumen -->
+                    <rect x="140" y="305" width="145" height="14" rx="7" fill="#0056B3"/>
+                    <rect x="140" y="338" width="145" height="14" rx="7" fill="#0056B3"/>
+                    <rect x="140" y="371" width="105" height="14" rx="7" fill="#0056B3"/>
+
+                    <!-- Pin Lokasi Kuning -->
+                    <path d="M 345,285 C 305,285 290,320 290,350 C 290,390 345,430 345,430 C 345,430 400,390 400,350 C 400,320 385,285 345,285 Z" fill="#FFB100" stroke="#FFFFFF" stroke-width="6"/>
+                    <circle cx="345" cy="335" r="18" fill="#FFFFFF"/>
+                </svg>
+                <div class="brand-text">
+                    <h1>SIPERATA</h1>
+                    <p>Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online</p>
+                </div>
+            </div>
+
+            <nav aria-label="Navigasi Utama" class="nav-bar">
+                <ul class="nav-list">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li class="has-dropdown">
+                        <a href="#layanan">Layanan Surat <span class="chevron-static" aria-hidden="true">▾</span></a>
+                        <ul class="dropdown">
+                            <li><a href="#kependudukan">Kependudukan & Catatan Sipil</a></li>
+                            <li><a href="#pertanahan">Pertanahan, Pajak & Tempat Tinggal</a></li>
+                            <li><a href="#ekonomi">Ekonomi & Sosial</a></li>
+                            <li><a href="#khusus">Keterangan Khusus & Legalitas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#tracking">Tracking Status</a></li>
+                    <li><a href="#kontak">Bantuan</a></li>
+                </ul>
+                <a class="btn-login" href="#">Login</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Konten Utama -->
-    <main id="main-content">
+    <main id="main">
 
-        <!-- Section 1: Beranda -->
         <section id="beranda">
+<<<<<<< HEAD
             <h2>Selamat Datang di Portal Layanan RT Online</h2>
             <p>Pengurusan surat pengantar kependudukan, perizinan, dan bantuan sosial kini lebih mudah dan transparan.</p>
             <figure>
@@ -196,14 +244,150 @@
                     <button type="reset">Batal</button>
                 </p>
             </form>
+=======
+            <div class="beranda-text">
+                <h2>Selamat Datang di Portal Pelayanan Warga RT</h2>
+                <p>Pengurusan surat pengantar RT kini lebih cepat, transparan, dan dapat diakses dari mana saja tanpa perlu mengantre di rumah Pengurus RT.</p>
+                <a class="btn" href="#layanan">Lihat Layanan Surat</a>
+            </div>
+            <div class="beranda-media">
+                <div class="beranda-icon" role="img" aria-label="Ilustrasi layanan surat RT online">📮</div>
+            </div>
+        </section>
+
+        <section id="layanan">
+            <h2>Jenis Surat Pengantar yang Tersedia</h2>
+
+            <div class="categories">
+
+                <details id="kependudukan" class="category" open>
+                    <summary>
+                        <span class="category-title"><span class="category-icon" aria-hidden="true">🧾</span> Kependudukan & Catatan Sipil</span>
+                        <span class="chevron" aria-hidden="true">▾</span>
+                    </summary>
+                    <ul class="category-items">
+                        <li><span>Surat Pengantar KK Baru / Perubahan Data KK</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Pengantar Pindah / Datang Domisili</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Pengantar Akta Kelahiran</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Pengantar Akta Kematian</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                    </ul>
+                </details>
+
+                <details id="pertanahan" class="category">
+                    <summary>
+                        <span class="category-title"><span class="category-icon" aria-hidden="true">🏠</span> Pertanahan, Pajak & Tempat Tinggal</span>
+                        <span class="chevron" aria-hidden="true">▾</span>
+                    </summary>
+                    <ul class="category-items">
+                        <li><span>Surat Keterangan Pembebasan / Keringanan PBB</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Keterangan Belum Memiliki SPPT PBB</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Keterangan Belum Memiliki Rumah</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                    </ul>
+                </details>
+
+                <details id="ekonomi" class="category">
+                    <summary>
+                        <span class="category-title"><span class="category-icon" aria-hidden="true">🤝</span> Ekonomi & Sosial</span>
+                        <span class="chevron" aria-hidden="true">▾</span>
+                    </summary>
+                    <ul class="category-items">
+                        <li><span>Surat Keterangan Tidak Mampu (SKTM)</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Keterangan Usaha (SKU) Mikro</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                    </ul>
+                </details>
+
+                <details id="khusus" class="category">
+                    <summary>
+                        <span class="category-title"><span class="category-icon" aria-hidden="true">📜</span> Keterangan Khusus & Legalitas</span>
+                        <span class="chevron" aria-hidden="true">▾</span>
+                    </summary>
+                    <ul class="category-items">
+                        <li><span>Surat Pengantar Nikah (Formulir N1&ndash;N4)</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Keterangan Ahli Waris (SKAW)</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Keterangan Beda Nama / Data</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Keterangan Domisili Usaha / Organisasi</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                        <li><span>Surat Keterangan Izin Keramaian / Acara</span><a class="card-cta" href="#kontak">Ajukan →</a></li>
+                    </ul>
+                </details>
+
+            </div>
+        </section>
+
+        <section id="kontak">
+            <div class="kontak-wrapper">
+                <div class="kontak-info">
+                    <h2>Hubungi Sekretariat RT</h2>
+                    <p>Punya pertanyaan atau kendala dalam pengajuan surat? Kirim pesan ke pengurus RT melalui form berikut.</p>
+                    <br>
+                    <div class="info-group">
+                        <strong>Kontak WA:</strong>
+                        <p>085312467890</p>
+                    </div>
+                    <div class="info-group">
+                        <strong>Alamat:</strong>
+                        <p>Jl. Cempaka RT.06 No. 11, Kel. Juata Permai, Kec. Tarakan Utara, Kota Tarakan</p>
+                    </div>
+                </div>
+
+                <div class="kontak-form-card">
+                    <form action="#" method="post">
+                        <div>
+                            <label for="nama_warga">Nama Lengkap Warga:</label><br>
+                            <input type="text" id="nama_warga" name="nama_warga" required placeholder="Masukkan nama Anda">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="no_rumah">Nomor Rumah (Blok/No):</label><br>
+                            <input type="text" id="no_rumah" name="no_rumah" required placeholder="Contoh: Blok A No. 12">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="pesan">Pesan / Kendala:</label><br>
+                            <textarea id="pesan" name="pesan" rows="4" required placeholder="Tuliskan pesan Anda..."></textarea>
+                        </div>
+                        <br>
+                        <button type="submit">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+>>>>>>> feature/struktur-home
         </section>
 
     </main>
 
-    <!-- Footer -->
     <footer>
+<<<<<<< HEAD
         <p>&copy; 2026 SIPERATA - Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online.</p>
         <p><a href="#main-content">Kembali ke atas</a></p>
+=======
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>SIPERATA</h3>
+                <p>Sistem Informasi Pelayanan & Tracking Surat Pengantar RT Online.</p>
+            </div>
+            
+            <div class="footer-col">
+                <strong>Menu Utama</strong>
+                <ul class="footer-links">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#layanan">Layanan Surat</a></li>
+                    <li><a href="#tracking">Tracking Status</a></li>
+                    <li><a href="#kontak">Bantuan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <strong>Hubungi Kami</strong>
+                <p>📍 Jl. Cempaka RT.06 No. 11, Kel. Juata Permai, Kec. Tarakan Utara, Kota Tarakan</p>
+                <p>📞 085312467890</p>
+                <p>✉️ celanyamnyam@gmail.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 SIPERATA - Sistem Informasi Pelayanan RT Online.</p>
+        </div>
+>>>>>>> feature/struktur-home
     </footer>
 
 </body>
