@@ -474,3 +474,38 @@ summary:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
 }
+
+/* FIX MATI-MATIAN UNTUK SECTION LAYANAN */
+
+/* 1. Judul "Jenis Surat Pengantar..." */
+#layanan h2 {
+    color: #ffffff !important;
+}
+
+/* 2. Judul Kategori (Kependudukan, dll) */
+.category summary {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+/* 3. Kotak Daftar Surat (Ubah background kotak jadi agak gelap agar teks putih kelihatan) */
+.category-items li {
+    background-color: #1e293b !important; /* Warna Navy Gelap */
+    border: 1px solid #334155 !important;
+    padding: 10px 14px !important;
+    margin-bottom: 8px !important;
+    border-radius: 6px !important;
+}
+
+/* 4. Teks Nama Surat (KK Baru, Akta Kematian, dll) */
+.category-items li span {
+    color: #ffffff !important; /* Paksa warna PUTIH TERANG */
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+/* 5. Tombol Ajukan */
+.category-items li a.card-cta {
+    color: #ff7a00 !important; /* Warna Oranye */
+    font-weight: bold !important;
+}
