@@ -74,7 +74,7 @@
                     <li><a href="#kontak">Bantuan</a></li>
                 </ul>
 
-                <button id="theme-button" type="button" style="margin-right: 10px; padding: 6px 12px; cursor: pointer;">🌙 Ganti Tema</button>
+                <button id="theme-button" type="button" class="btn-theme" style="background-color: #ff7a00; color: #ffffff; border: none; padding: 10px 18px; border-radius: 20px; font-weight: bold; cursor: pointer; margin-right: 10px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">🌙 Ganti Tema</button>
 
                 <a class="btn-login" href="#">Login</a>
             </nav>
@@ -103,30 +103,30 @@
             </div>
 
             <div class="filter-container" style="margin-bottom: 15px; display: flex; gap: 8px;">
-    <button type="button" class="btn-filter" data-filter="Semua" 
-        style="background-color: #ffffff; color: #ff7a00; border: 2px solid #ff7a00; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">
-        Semua
-    </button>
+                <button type="button" class="btn-filter" data-filter="Semua" 
+                    style="background-color: #ffffff; color: #ff7a00; border: 2px solid #ff7a00; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">
+                    Semua
+                </button>
 
-    <button type="button" class="btn-filter" data-filter="Disetujui" 
-        style="background-color: #ffffff; color: #ff7a00; border: 2px solid #ff7a00; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">
-        Disetujui
-    </button>
+                <button type="button" class="btn-filter" data-filter="Disetujui" 
+                    style="background-color: #ffffff; color: #ff7a00; border: 2px solid #ff7a00; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">
+                    Disetujui
+                </button>
 
-    <button type="button" class="btn-filter" data-filter="Proses" 
-        style="background-color: #ffffff; color: #ff7a00; border: 2px solid #ff7a00; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">
-        Dalam Proses
-    </button>
-</div>
+                <button type="button" class="btn-filter" data-filter="Proses" 
+                    style="background-color: #ffffff; color: #ff7a00; border: 2px solid #ff7a00; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">
+                    Dalam Proses
+                </button>
+            </div>
 
-           <div class="limit-container" style="margin-bottom: 15px; color: inherit;">
-    <label for="limit-select">Tampilkan per halaman: </label>
-    <select id="limit-select" style="padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; color: #333;">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="20">20</option>
-    </select>
-</div>
+            <div class="limit-container" style="margin-bottom: 15px; color: inherit;">
+                <label for="limit-select">Tampilkan per halaman: </label>
+                <select id="limit-select" style="padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; color: #333;">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
 
             <div id="daftar-alat" class="grid-container"></div>
         </section>
@@ -189,40 +189,115 @@
             </div>
         </section>
 
+        <!-- SECTION FORM PENGAJUAN SURAT -->
         <section id="kontak">
             <div class="kontak-wrapper">
                 <div class="kontak-info">
-                    <h2>Hubungi Sekretariat RT</h2>
-                    <p>Punya pertanyaan atau kendala dalam pengajuan surat? Kirim pesan ke pengurus RT melalui form berikut.</p>
+                    <h2>Form Pengajuan Surat Warga RT 06</h2>
+                    <p>Lengkapi formulir di bawah ini dengan benar. Sistem akan memverifikasi input secara otomatis sebelum berkas dikirim ke pengurus RT.</p>
                     <br>
                     <div class="info-group">
-                        <strong>Kontak WA:</strong>
+                        <strong>Kontak WA Ketua RT:</strong>
                         <p>085312467890</p>
                     </div>
                     <div class="info-group">
-                        <strong>Alamat:</strong>
-                        <p>Jl. Cempaka RT.06 No. 11, Kel. Juata Permai, Kec. Tarakan Utara, Kota Tarakan</p>
+                        <strong>Alamat RT:</strong>
+                        <p>Jl. Cempaka RT.06 No. 11, Kel. Juata Permai, Kec. Tarakan Utara</p>
                     </div>
                 </div>
 
                 <div class="kontak-form-card">
-                    <form action="#" method="post">
-                        <div>
-                            <label for="nama_warga">Nama Lengkap Warga:</label><br>
-                            <input type="text" id="nama_warga" name="nama_warga" required placeholder="Masukkan nama Anda">
+                    <div id="form-status" role="status" aria-live="polite" class="status-message"></div>
+
+                    <form id="form-alat" novalidate>
+                        
+                        <!-- 1. Nama Pemohon -->
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap Pemohon <span class="required-star">*</span></label>
+                            <input 
+                                type="text" 
+                                id="nama" 
+                                name="nama" 
+                                required 
+                                minlength="3" 
+                                placeholder="Masukkan nama sesuai KTP" 
+                                aria-describedby="error-nama"
+                            />
+                            <small id="error-nama" class="error-text"></small>
                         </div>
-                        <br>
-                        <div>
-                            <label for="no_rumah">Nomor Rumah (Blok/No):</label><br>
-                            <input type="text" id="no_rumah" name="no_rumah" required placeholder="Contoh: Blok A No. 12">
+
+                        <!-- 2. Kategori Surat -->
+                        <div class="form-group">
+                            <label for="kategori">Kategori Surat <span class="required-star">*</span></label>
+                            <select id="kategori" name="kategori" required aria-describedby="error-kategori">
+                                <option value="">-- Pilih Jenis Surat --</option>
+                                <option value="kependudukan">Kependudukan & Catatan Sipil</option>
+                                <option value="pertanahan">Pertanahan & Rumah</option>
+                                <option value="ekonomi">Ekonomi & Sosial</option>
+                                <option value="khusus">Keterangan Khusus</option>
+                            </select>
+                            <small id="error-kategori" class="error-text"></small>
                         </div>
-                        <br>
-                        <div>
-                            <label for="pesan">Pesan / Kendala:</label><br>
-                            <textarea id="pesan" name="pesan" rows="4" required placeholder="Tuliskan pesan Anda..."></textarea>
+
+                        <!-- 2b. Jenis Surat Spesifik -->
+                        <div class="form-group">
+                            <label for="jenis-surat">Jenis Surat Spesifik <span class="required-star">*</span></label>
+                            <select id="jenis-surat" name="jenis-surat" required aria-describedby="error-jenis">
+                                <option value="">-- Pilih Detail Surat --</option>
+                                <option value="sktm">Surat Keterangan Tidak Mampu (SKTM)</option>
+                                <option value="kk-baru">Surat Pengantar KK Baru / Perubahan KK</option>
+                                <option value="pindah-domisili">Surat Pengantar Pindah / Datang Domisili</option>
+                                <option value="sku">Surat Keterangan Usaha (SKU)</option>
+                                <option value="nikah">Surat Pengantar Nikah (Formulir N1-N4)</option>
+                                <option value="akta-lahir">Surat Pengantar Akta Kelahiran</option>
+                                <option value="akta-kematian">Surat Pengantar Akta Kematian</option>
+                                <option value="pbb">Surat Keterangan Pembebasan / Keringanan PBB</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                            <small id="error-jenis" class="error-text"></small>
                         </div>
-                        <br>
-                        <button type="submit">Kirim Pesan</button>
+
+                        <!-- 3. Jumlah Berkas -->
+                        <div class="form-group">
+                            <label for="jumlah">Jumlah Lampiran Berkas <span class="required-star">*</span></label>
+                            <input 
+                                type="number" 
+                                id="jumlah" 
+                                name="jumlah" 
+                                required 
+                                min="1" 
+                                max="10" 
+                                placeholder="Contoh: 1" 
+                                aria-describedby="error-jumlah"
+                            />
+                            <small id="error-jumlah" class="error-text"></small>
+                        </div>
+
+                        <!-- 4. Kelengkapan Berkas -->
+                        <div class="form-group">
+                            <label for="kondisi">Kelengkapan Berkas <span class="required-star">*</span></label>
+                            <select id="kondisi" name="kondisi" required aria-describedby="error-kondisi">
+                                <option value="">-- Pilih Status Berkas --</option>
+                                <option value="Lengkap">Lengkap (Ada KTP/KK)</option>
+                                <option value="Perlu Verifikasi">Perlu Verifikasi Pengurus</option>
+                            </select>
+                            <small id="error-kondisi" class="error-text"></small>
+                        </div>
+
+                        <!-- 5. Tanggal Pengajuan -->
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal Pengajuan <span class="required-star">*</span></label>
+                            <input 
+                                type="date" 
+                                id="tanggal" 
+                                name="tanggal" 
+                                required 
+                                aria-describedby="error-tanggal"
+                            />
+                            <small id="error-tanggal" class="error-text"></small>
+                        </div>
+
+                        <button type="submit" class="btn-submit-form">Kirim Pengajuan</button>
                     </form>
                 </div>
             </div>
@@ -251,7 +326,7 @@
                 <strong>Hubungi Kami</strong>
                 <p>📍 Jl. Cempaka RT.06 No. 11, Kel. Juata Permai, Kec. Tarakan Utara, Kota Tarakan</p>
                 <p>📞 085312467890</p>
-                <p>✉️ celanyamnyam@gmail.com</p>
+                <p>✉ celanyamnyam@gmail.com</p>
             </div>
         </div>
         

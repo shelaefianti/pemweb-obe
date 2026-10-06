@@ -192,3 +192,119 @@ if (limitSelect) {
         renderItems(dataAwal);
     });
 }
+
+export function validateForm(formData) {
+    const errors = {};
+
+    // Daftar pilihan kategori yang sah/tersedia
+    const validKategori = ['kependudukan', 'pertanahan', 'ekonomi', 'khusus'];
+
+    // 1. VALIDASI NAMA
+    if (!formData.nama || formData.nama.trim() === '') {
+        errors.nama = 'Nama pemohon tidak boleh kosong.'; // Pesan saat kosong
+    } else if (formData.nama.trim().length < 3) {
+        errors.nama = 'Format nama tidak valid (minimal 3 karakter).'; // Pesan saat format tidak valid
+    }
+
+    // 2. VALIDASI KATEGORI (Latihan E - Poin 2 & 3)
+    if (!formData.kategori) {
+        errors.kategori = 'Kategori wajib dipilih.'; // Pesan saat kosong
+    } else if (!validKategori.includes(formData.kategori.toLowerCase())) {
+        errors.kategori = 'Pilihan kategori tidak valid / tidak terdaftar.'; // Pesan saat nilai tidak sesuai
+    }
+
+    // 3. VALIDASI JUMLAH
+    if (!formData.jumlah && formData.jumlah !== 0) {
+        errors.jumlah = 'Jumlah berkas tidak boleh kosong.'; // Pesan saat kosong
+    } else if (isNaN(formData.jumlah) || Number(formData.jumlah) < 1) {
+        errors.jumlah = 'Format jumlah tidak valid (harus berupa angka minimal 1).'; // Pesan saat format tidak valid
+    }
+
+    // 4. VALIDASI KONDISI
+    if (!formData.kondisi) {
+        errors.kondisi = 'Status kelengkapan berkas tidak boleh kosong.'; // Pesan saat kosong
+    }
+
+    // 5. VALIDASI TANGGAL (Latihan E - Poin 1 & 3)
+    if (!formData.tanggal) {
+        errors.tanggal = 'Tanggal pengajuan tidak boleh kosong.'; // Pesan saat kosong
+    } else {
+        const inputDate = new Date(formData.tanggal);
+        const today = new Date();
+        
+        // Reset jam, menit, detik ke 00:00:00 agar perbandingan murni pada tanggal
+        inputDate.setHours(0, 0, 0, 0);
+        today.setHours(0, 0, 0, 0);
+
+        if (isNaN(inputDate.getTime())) {
+            errors.tanggal = 'Format tanggal tidak valid.';
+        } else if (inputDate > today) {
+            errors.tanggal = 'Tanggal tidak boleh melebihi tanggal hari ini.'; // Pesan saat melebihi hari ini
+        }
+    }
+
+    return errors;
+}
+
+// Event Handler untuk Form Submit
+const formAlat = document.querySelector('#form-alat');
+const formStatus = document.querySelector('#form-status');
+
+if (formAlat) {
+    formAlat.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Bersihkan pesan status & teks error sebelumnya
+        if (formStatus) {
+            formStatus.textContent = '';
+            formStatus.style.display = 'none';
+        }
+        document.querySelectorAll('.error-text').forEach(el => el.textContent = '');
+
+        const formDataObj = {
+            nama: document.querySelector('#nama')?.value || '',
+            kategori: document.querySelector('#kategori')?.value || '',
+            'jenis-surat': document.querySelector('#jenis-surat')?.value || '',
+            jumlah: document.querySelector('#jumlah')?.value || '',
+            kondisi: document.querySelector('#kondisi')?.value || '',
+            tanggal: document.querySelector('#tanggal')?.value || ''
+        };
+
+        const errors = validateForm(formDataObj);
+
+        // Jika ada error, tampilkan di bawah masing-masing input
+        if (Object.keys(errors).length > 0) {
+            for (const [key, message] of Object.entries(errors)) {
+                const errorElement = document.querySelector(`#error-${key}`);
+                if (errorElement) {
+                    errorElement.textContent = message;
+                    errorElement.style.color = '#d9534f';
+                }
+            }
+        } else {
+            // Jika valid, masukkan data ke daftar & tampilkan pesan hijau di bawah form
+            pengajuanSurat.unshift({
+                id: Date.now(),
+                pemohon: formDataObj.nama,
+                jenisSurat: formDataObj.kategori,
+                status: 'Proses'
+            });
+
+            renderItems(pengajuanSurat);
+            formAlat.reset();
+
+            // TAMPILAN PESAN BERHASIL (Hijau di bawah form)
+            if (formStatus) {
+                formStatus.style.display = 'block';
+                formStatus.style.backgroundColor = '#d4edda';
+                formStatus.style.color = '#155724';
+                formStatus.style.padding = '12px 16px';
+                formStatus.style.marginTop = '15px';
+                formStatus.style.borderRadius = '6px';
+                formStatus.style.textAlign = 'center';
+                formStatus.style.fontWeight = 'bold';
+                formStatus.textContent = 'Data valid dan siap dikirim! (Berhasil ditambahkan ke daftar)';
+            }
+        }
+    });
+}
