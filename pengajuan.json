@@ -1,0 +1,6 @@
+[
+  { "id": 1, "pemohon": "Siti Rahma", "jenisSurat": "Pengantar KK Baru", "rt": "06", "status": "Disetujui" },
+  { "id": 2, "pemohon": "Ahmad Fauzi", "jenisSurat": "Surat Keterangan Domisili", "rt": "06", "status": "Dalam Proses" },
+  { "id": 3, "pemohon": "Dewi Lestari", "jenisSurat": "Pengantar KTP", "rt": "06", "status": "Disetujui" },
+  { "id": 4, "pemohon": "Rian Pratama", "jenisSurat": "Surat Keterangan Tidak Mampu", "rt": "06", "status": "Dalam Proses" }
+]

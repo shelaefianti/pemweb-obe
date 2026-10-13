@@ -308,3 +308,74 @@ if (formAlat) {
         }
     });
 }
+
+async function loadUsers() {
+    const message = document.querySelector('#form-status');
+
+    if (message) {
+        message.replaceChildren();
+        message.textContent = 'Memuat data...';
+    }
+
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+
+        const users = await response.json();
+
+        // Pesan Sukses (Cukup ubah status text-nya saja, jangan timpa #daftar-alat)
+        if (message) message.textContent = `Berhasil memuat ${users.length} data.`;
+
+    } catch (error) {
+        console.error('Terjadi kesalahan:', error);
+        
+        if (message) {
+            message.replaceChildren(); 
+
+            const errorText = document.createElement('span');
+            errorText.textContent = 'Data belum dapat dimuat. ';
+
+            const retryBtn = document.createElement('button');
+            retryBtn.textContent = 'Coba Lagi';
+            
+            retryBtn.style.marginLeft = '10px';
+            retryBtn.style.padding = '4px 14px';
+            retryBtn.style.borderRadius = '20px';
+            retryBtn.style.border = '1.5px solid #ff7a00';
+            retryBtn.style.backgroundColor = 'transparent';
+            retryBtn.style.color = '#ff7a00';
+            retryBtn.style.fontWeight = 'bold';
+            retryBtn.style.cursor = 'pointer';
+
+            retryBtn.addEventListener('click', () => {
+                loadUsers(); 
+            });
+
+            message.appendChild(errorText);
+            message.appendChild(retryBtn);
+        }
+    }
+}
+
+loadUsers();
+
+// --- KODE LATIHAN 2: Filter Pencarian Lokal ---
+// (Gunakan variabel searchInput yang sudah ada, atau cukup ganti nama variabelnya jika belum ada)
+const searchInputElem = document.querySelector('#search-input');
+
+if (searchInputElem) {
+    searchInputElem.addEventListener('input', (e) => {
+        const keyword = e.target.value.toLowerCase().trim();
+
+        const filteredData = pengajuanSurat.filter(item => {
+            const nama = item.pemohon || item.nama || '';
+            const jenis = item.jenisSurat || '';
+            return nama.toLowerCase().includes(keyword) || jenis.toLowerCase().includes(keyword);
+        });
+
+        renderItems(filteredData);
+    });
+}
