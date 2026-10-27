@@ -318,16 +318,18 @@ async function loadUsers() {
     }
 
     try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        // UBAH URL INI DARI JSONPLACEHOLDER MENJADI API LOKAL SIPERATA:
+        const response = await fetch('http://localhost/pemweb-obe/api/alats.php');
         
         if (!response.ok) {
             throw new Error(`HTTP Error! Status: ${response.status}`);
         }
 
-        const users = await response.json();
+        const result = await response.json();
+        const users = result.data || result; // Mengambil array data dari API kita
 
-        // Pesan Sukses (Cukup ubah status text-nya saja, jangan timpa #daftar-alat)
-        if (message) message.textContent = `Berhasil memuat ${users.length} data.`;
+        // Pesan Sukses
+        if (message) message.textContent = `Berhasil memuat ${users.length} data pengajuan.`;
 
     } catch (error) {
         console.error('Terjadi kesalahan:', error);

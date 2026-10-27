@@ -1,0 +1,13 @@
+{
+    "name": "siperata/app",
+    "description": "Sistem Informasi Pelayanan & Tracking Surat RT Online",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shela efianti",
+            "email": "shelaefianti@gmail.com"
+        }
+    ],
+    "require": {}
+}

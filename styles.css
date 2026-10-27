@@ -614,3 +614,43 @@ summary:focus-visible {
 .btn-submit-form:hover {
     background-color: #004085 !important;
 }
+
+/* ========================================================= */
+/* PERBAIKAN RESPONSIF MOBILE AGAR TIDAK MELUBER KELUAR      */
+/* ========================================================= */
+
+@media (max-width: 47.99rem) {
+  /* Pastikan seluruh kontainer header menyesuaikan lebar layar */
+  .header-container {
+    width: 100%;
+    padding-inline: 0.5rem;
+  }
+
+  /* Ubah nav-bar agar turun ke bawah secara rapi di layar HP */
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* Tombol ganti tema dan login menyesuaikan lebar layar mobile */
+  .btn-theme, .btn-login {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-right: 0 !important;
+  }
+
+  /* Bungkus item list layanan agar teks panjang turun ke bawah (tidak mendesak ke kanan) */
+  .category-items li {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 6px;
+  }
+
+  .card-cta {
+    align-self: flex-end;
+  }
+}

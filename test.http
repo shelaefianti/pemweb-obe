@@ -1,0 +1,32 @@
+### Test 1: GET Data
+GET http://localhost/pemweb-obe/api/alats.php
+
+### Test 2: POST Valid (Status 201)
+POST http://localhost/pemweb-obe/api/alats.php
+Content-Type: application/json
+
+{
+    "nama": "Surat Keterangan Tidak Mampu",
+    "jumlah": 5
+}
+
+### Test 3: POST JSON Rusak (Status 400)
+POST http://localhost/pemweb-obe/api/alats.php
+Content-Type: application/json
+
+{
+    "nama": "Surat Keterangan Tidak Mampu",
+    "jumlah": 
+}
+
+### Test 4: POST Data Tidak Valid (Status 422)
+POST http://localhost/pemweb-obe/api/alats.php
+Content-Type: application/json
+
+{
+    "nama": "",
+    "jumlah": -1
+}
+
+### Test 5: DELETE Method Tidak Diizinkan (Status 405)
+DELETE http://localhost/pemweb-obe/api/alats.php
