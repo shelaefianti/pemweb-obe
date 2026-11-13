@@ -17,7 +17,7 @@ function db(): PDO {
     static $pdo = null;
     if ($pdo instanceof PDO) return $pdo;
 
-    $host = envRequired('DB_HOST');
+    $host = 'localhost_salah';
     $name = envRequired('DB_NAME');
     $user = envRequired('DB_USER');
 
